@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Edit "{{ item['item_name'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <label for="item">Item</label>
+        <input name="item_name" id="item_name"
+            value="{{ request.form['item_name'] or item['item_name'] }}" required>
+        <label for="deadline">Deadline</label>
+        <textarea name="deadline" id="deadline">{{ request.form['deadline'] or item['deadline'] }}</textarea>
+        <label for="item">Status</label>
+        <input name="item_status" id="item_status" type="number"
+            value="{{ request.form['item_status'] or item['item_status'] }}" required>
+        <input type="submit" value="Save">
+    </form>
+    <hr>
+    <form action="{{ url_for('todo.delete', id=item['id']) }}" method="post">
+        <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+    </form>
+{% endblock %}

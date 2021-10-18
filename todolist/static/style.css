@@ -1,0 +1,202 @@
+html {
+    font-family: sans-serif;
+    background: #eee;
+    padding: 1rem;
+  }
+  
+  body {
+    max-width: 960px;
+    margin: 0 auto;
+    background: white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: serif;
+    color: #377ba8;
+    margin: 1rem 0;
+  }
+  
+  a {
+    color: #377ba8;
+  }
+  
+  /*　hr:水平罫線　*/
+  hr {
+    border: none;
+    border-top: 1px solid lightgray;
+  }
+  
+  /* nav:ナビゲーションセクション要素 */
+  nav {
+    background: lightgray;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+  }
+  
+  nav h1 {
+    flex: auto;
+    margin: 0;
+  }
+  
+  nav h1 a {
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  nav ul  {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li a, nav ul li span, header .action {
+    display: block;
+    padding: 0.5rem;
+  }
+  
+  /* <section class="content"> の箇所に適用される */
+  .content {
+    padding: 0 1rem 1rem;
+    margin: 10px 50px 10px 50px;
+    text-align: center;
+  }
+
+  /* <section class="content"> の header 部分に適用される */
+  .content > header {
+    border-bottom: 1px solid lightgray;
+  }
+  
+  .content > header h1 {
+    flex: auto;
+    margin: 1rem 0 0.25rem 0;
+  }
+  
+  /*  base の <div class="flash">{{ message }}</div> の部分に適用される */
+  .flash {
+    margin: 1em 0;
+    padding: 1em;
+    background: #cae6f6;
+    border: 1px solid #377ba8;
+  }
+  
+  /* index.html の <article class="item"> */
+  .item > header {
+    display: flex;
+    align-items: flex-end;
+    font-size: 0.85em;
+  }
+  
+  .item > header > div:first-of-type {
+    flex: auto;
+  }
+  
+  .item > header h1 {
+    font-size: 1.5em;
+    margin-bottom: 0;
+  }
+  
+  .item .about {
+    color: slategray;
+    font-style: italic;
+  }
+  
+  .item .body {
+    white-space: pre-line;
+  }
+  
+  .content:last-child {
+    margin-bottom: 0;
+  }
+  
+  .content form {
+    margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content label {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+  
+  .content input, .content textarea {
+    margin-bottom: 1em;
+  }
+  
+  .content textarea {
+    min-height: 12em;
+    resize: vertical;
+  }
+  
+  input.danger {
+    color: #cc2f2e;
+  }
+  
+  input[type=submit] {
+    align-self: start;
+    min-width: 10em;
+  }
+
+
+
+
+
+
+
+
+/*ここからしたは追加した部分*/
+
+
+/*ログイン画面*/
+  .username_box {
+    margin: 10px 50px 10px 50px;
+  }
+
+  .password_box {
+    margin: 10px 50px 10px 50px;
+  }
+
+
+/*リスト画面*/
+.New_Button {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 16pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 5px 12px;    /* 余白       */
+  background    : #ffffff;     /* 背景色     */
+  color         : #000000;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+}
+
+.list_header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  vertical-align : middle;
+}
+
+.list_header_elements {
+  font-size     : 18pt;        /* 文字サイズ */
+  padding: 15px;
+  font-family: serif;
+  color: #377ba8;
+  font-weight:bold;
+  flex-basis: 30%;
+  text-align    : center;      /* 文字位置   */
+  vertical-align : middle;
+}
+
+.list_elements {
+  flex-basis: 30%;
+  text-align    : center;      /* 文字位置   */
+}
+
+.listed_items {
+  display: flex;
+  justify-content: space-around;
+}
