@@ -74,6 +74,8 @@ def update(id):
     if request.method == 'POST':
         item = request.form['item_name']
         deadline = request.form['deadline']
+        status = request.form['item_status']
+
         error = None
 
         if not item:
@@ -84,9 +86,9 @@ def update(id):
         else:
             db = get_db()
             db.execute(
-                'UPDATE item SET item_name = ?, deadline = ?'
+                'UPDATE item SET item_name = ?, deadline = ?, item_status = ?'
                 ' WHERE id = ?',
-                (item, deadline, id)
+                (item, deadline, status, id)
             )
             db.commit()
             return redirect(url_for('list'))

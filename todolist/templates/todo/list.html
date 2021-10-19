@@ -10,6 +10,7 @@
     <div class="list_header">
         <div class="list_header_elements">items</div>
         <div class="list_header_elements">deadline</div>
+        <div class="list_header_elements">item_status</div>
         <div class="list_header_elements"></div>
     </div>
 {% endblock %}
@@ -24,6 +25,8 @@
             <div class="list_elements">{{ item['item_name'] }}</div>
             <!--deadline-->
             <div class="list_elements">{{ item['deadline'] }}</div>
+            <!--item_status-->
+            <div class="list_elements">{{ item['item_status'] }}</div>
             <!--ログインユーザーが投稿者であれば Edit を表示する-->
             <!-- Edit をクリックしたら id を取得してアップデートビューに渡す-->
             <a class="list_elements" href="{{ url_for('todo.update', id=item['id']) }}">Edit</a>
