@@ -200,3 +200,10 @@ html {
   display: flex;
   justify-content: space-around;
 }
+
+/*Edit画面*/
+.edit_status {
+  display: flex;
+  justify-content: space-around;
+  margin: 0px 0px 50px 0px;
+}
