@@ -15,9 +15,14 @@
         <textarea name="deadline" id="deadline">{{ request.form['deadline'] or item['deadline'] }}</textarea>
 
         <label for="item_status">Status</label>
-        <input name="item_status" id="item_status" type="INTEGER"
-            value="{{ request.form['item_status'] or item['item_status'] }}" required>
-
+        <div class="edit_status">
+            <span class="not_yet">
+                <input type="radio" name="item_status" id="item_status" value="0" checked="checked" required>未
+            </span>
+            <span class="done">
+                <input type="radio" name="item_status" id="item_status" value="1" required>済
+            </span>
+        </div>
         <input type="submit" value="Save">
     </form>
     <hr>
