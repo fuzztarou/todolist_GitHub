@@ -7,26 +7,34 @@
 
 {% block content %}
     <form method="post">
+        <!--アイテム名-->
         <label for="item">Item</label>
         <input name="item_name" id="item_name"
             value="{{ request.form['item_name'] or item['item_name'] }}" required>
 
+        <!--締め切り-->
         <label for="deadline">Deadline</label>
-        <textarea name="deadline" id="deadline">{{ request.form['deadline'] or item['deadline'] }}</textarea>
+        <input type="date" name="deadline" id="deadline"
+            value="{{ request.form['deadline'] or item['deadline'] }}">
 
+        <!--ステータス-->
         <label for="item_status">Status</label>
         <div class="edit_status">
             <span class="not_yet">
-                <input type="radio" name="item_status" id="item_status" value="0" checked="checked" required>未
+                <input type="radio" name="item_status" 
+                    id="item_status" value="0" checked="checked" required>未
             </span>
             <span class="done">
-                <input type="radio" name="item_status" id="item_status" value="1" required>済
+                <input type="radio" name="item_status" 
+                    id="item_status" value="1" required>済
             </span>
         </div>
+
         <input type="submit" value="Save">
     </form>
     <hr>
     <form action="{{ url_for('todo.delete', id=item['id']) }}" method="post">
-        <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+        <input class="danger" type="submit" value="Delete" 
+            onclick="return confirm('Are you sure?');">
     </form>
 {% endblock %}
