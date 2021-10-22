@@ -26,7 +26,14 @@
             <!--deadline-->
             <div class="list_elements">{{ item['deadline'] }}</div>
             <!--item_status-->
-            <div class="list_elements">{{ item['item_status'] }}</div>
+            {% set status = item['item_status'] %}
+            {% if status %}
+                {% if status==0 %}
+                    <div class="list_elements" name="item_status_name" id="item_status_id">未</div>
+                {% else %}
+                    <div class="list_elements" name="item_status_name" id="item_status_id">済</div>
+                {% endif %}
+            {% endif %}
             <!--ログインユーザーが投稿者であれば Edit を表示する-->
             <!-- Edit をクリックしたら id を取得してアップデートビューに渡す-->
             <a class="list_elements" href="{{ url_for('todo.update', id=item['id']) }}">Edit</a>
