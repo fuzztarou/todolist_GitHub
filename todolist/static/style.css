@@ -201,9 +201,59 @@ html {
   justify-content: space-around;
 }
 
+
+
 /*Edit画面*/
+.edit_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item_name {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 20px auto 20px auto;
+}
+
+.item_name_label {
+  width: 100px;
+}
+
+.item_name_input {
+  width: 300px;
+}
+
+.deadline {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 20px auto 20px auto;
+}
+
+.deadline_label {
+  width: 100px;
+}
+
+.deadline_input {
+  width: 300px;
+}
+
+.status {
+  display: flex;
+  width: 40%;
+  margin: 20px auto 20px auto;
+}
+
+.edit_status_label {
+  width: 100px;
+}
+
 .edit_status {
   display: flex;
   justify-content: space-around;
-  margin: 0px 0px 50px 0px;
+  width: 40%;
+  margin: 0px auto 0px auto;
+
 }
