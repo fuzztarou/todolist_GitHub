@@ -15,5 +15,6 @@ CREATE TABLE item (
     item_name TEXT NOT NULL,
     deadline TEXT NOT NULL,
     item_status INTEGER NOT NULL,
+    judge_date INTEGER,
     FOREIGN KEY (owner_id) REFERENCES user (id)
 );
