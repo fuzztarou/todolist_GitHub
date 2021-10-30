@@ -25,32 +25,30 @@ def index():
         #SELECT した deadline を deadline に代入
         deadline = datetime.datetime.strptime(row['deadline'], '%Y-%m-%d')  #datetime型
         deadline = deadline.date()  #date型
-        #レコードのidを変数に格納
-        row_id = row['id']
 
         #今日の日付とdeadlineを比較
         #　締め切り前　今日<=deadline なら judge_date に 0 を代入
         if current_date < deadline:
             db.execute('UPDATE item SET judge_date = 0'
             ' WHERE id = ?',
-            (row_id,)
+            (row['id'],)
             )
         #　締め切りを過ぎてる　今日>deadline ならに １ を代入
         elif current_date > deadline:
             db.execute('UPDATE item SET judge_date = 1'
             ' WHERE id = ?',
-            (row_id,)
+            (row['id'],)
             )
     
     db.commit()
 
     items = db.execute(
-        'SELECT i.id, item_name, deadline, item_status, owner_id, username, created'
+        'SELECT i.id, item_name, deadline, item_status, owner_id, username, created, judge_date'
         ' FROM item i JOIN user u ON i.owner_id = u.id'
         ' ORDER BY created DESC'
     ).fetchall()
 
-    return render_template('todo/list.html', items=items, c_time=current_date)
+    return render_template('todo/list.html', items=items)
 
 
 #アイテム新規登録 ページの処理

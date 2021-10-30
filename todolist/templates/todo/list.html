@@ -8,32 +8,44 @@
 
     <!--列タイトルの表示-->
     <div class="list_header">
-        <div class="list_header_elements">items</div>
-        <div class="list_header_elements">deadline</div>
-        <div class="list_header_elements">item_status</div>
+        <div class="list_header_elements">Items</div>
+        <div class="list_header_elements">Deadline</div>
+        <div class="list_header_elements">Item Status</div>
         <div class="list_header_elements"></div>
     </div>
 {% endblock %}
 
 {% block content %}
-    <!--投稿の数だけ繰り返す-->
+    <!--itemの数だけ繰り返す-->
     {% for item in items %}
-
-        <!--コンテナの作成-->
         <div class="listed_items">
             <!--item名-->
             <div class="list_elements">{{ item['item_name'] }}</div>
+
             <!--deadline-->
             <div class="list_elements">{{ item['deadline'] }}</div>
+
             <!--item_status-->
             {% set status = item['item_status'] %}
+            {% set judge = item['judge_date'] %}
+            <!--未の場合-->
             {% if status==0 %}
-                <div class="list_elements" name="item_status_name" id="item_status_id">未</div>
+                <!--締め切り前の場合(当日含む)-->
+                {% if judge==0 %}
+                    <div class="list_elements" name="item_status_name" id="item_status_id">未</div>
+                <!--締め切り後の場合-->
+                {% elif judge==1 %}
+                <div class="list_elements" name="item_status_name" id="item_status_id" >
+                    <div class="list_elements_colored" >未</div>
+                </div>
+                {% endif %}
+            <!--済の場合-->
             {% elif status==1 %}
                 <div class="list_elements" name="item_status_name" id="item_status_id">済</div>
             {% else %}
                 <div class="list_elements" name="item_status_name" id="item_status_id">?</div>
             {% endif %}
+
             <!--ログインユーザーが投稿者であれば Edit を表示する-->
             <!-- Edit をクリックしたら id を取得してアップデートビューに渡す-->
             <a class="list_elements" href="{{ url_for('todo.update', id=item['id']) }}">Edit</a>
@@ -43,6 +55,5 @@
         {% if not loop.last %}
             <hr>
         {% endif %}
-
     {% endfor %}
 {% endblock %}
