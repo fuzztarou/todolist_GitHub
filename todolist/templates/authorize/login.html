@@ -5,10 +5,21 @@
 
 {% block content %}
     <form method="post">
-        <label for="username">Username</label>
-        <input class="username_box" name="username" id="username" required>
-        <label for="password">Password</label>
-        <input class="password_box" type="password" name="password" id="password" required>
-        <input type="submit" value="Log In">
+        <div class="login_body">
+            <!--ログイン　ユーザー名-->
+            <div class="login_username">
+                <label class="login_username_label" for="username">Username</label>
+                <input class="login_username_input" name="username" id="username" required>    
+            </div>
+
+            <!--ログイン　パスワード-->
+            <div class="login_password">
+                <label class="login_password_label"for="password">Password</label>
+                <input class="login_password_input" type="password" name="password" id="password" required>
+            </div>
+
+            <!--ログイン　ボタン-->
+            <input class="login_button_submit" type="submit" value="Log In">
+        </div>
     </form>
 {% endblock %}

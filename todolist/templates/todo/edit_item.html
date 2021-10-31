@@ -10,28 +10,28 @@
             <div class='edit_body'>
 
                 <!--アイテム名-->
-                <div class='item_name'>
-                    <label class='item_name_label' for="item">Item</label>
-                    <input class='item_name_input' name="item_name" id="item_name"
+                <div class='edit_item_name'>
+                    <label class='edit_item_name_label' for="item">Item</label>
+                    <input class='edit_item_name_input' name="item_name" id="item_name"
                         value="{{ request.form['item_name'] or item['item_name'] }}" required>
                 </div>
 
                 <!--締め切り-->
-                <div class='deadline'>
-                    <label class='deadline_label' for="deadline">Deadline</label>
-                    <input class='deadline_input' type="date" name="deadline" id="deadline"
+                <div class='edit_deadline'>
+                    <label class='edit_deadline_label' for="deadline">Deadline</label>
+                    <input class='edit_deadline_input' type="date" name="deadline" id="deadline"
                         value="{{ request.form['deadline'] or item['deadline'] }}">
                 </div>
 
                 <!--ステータス-->
-                <div class='status'>
+                <div class='edit_status'>
                     <label class="edit_status_label" for="item_status">Status</label>
-                    <div class="edit_status">
-                        <span class="not_yet">
+                    <div class="edit_status_radio">
+                        <span>
                             <input type="radio" name="item_status" 
                                 id="item_status" value="0" checked="checked" required>未
                         </span>
-                        <span class="done">
+                        <span>
                             <input type="radio" name="item_status" 
                                 id="item_status" value="1" required>済
                         </span>
@@ -39,15 +39,13 @@
                 </div>
 
                 <!--　SaveボタンとDeleteボタン　-->
-                <div>
+                <div class='edit_save_button'>
                     <input type="submit" value="Save">
                 </div>
-                <div>
-                    <form action="{{ url_for('todo.delete', id=item['id']) }}" method="post">
-                        <input class="danger" type="submit" value="Delete" 
-                            onclick="return confirm('Are you sure?');">
-                    </form>
-                </div>
-            </div>
         </form>
+        <div class='edit_delte_button'>
+            <form action="{{ url_for('todo.delete', id=item['id']) }}" method="POST">
+                <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+            </form>
+        </div>
 {% endblock %}

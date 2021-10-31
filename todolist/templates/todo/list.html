@@ -3,7 +3,7 @@
 {% block header %}
     <!--ログインしていれば New をクリックして新規投稿のリンクを表示-->
     {% if g.user %}
-    <div class="New_Button"><a href="{{ url_for('todo.add_item') }}">Add a new tusk</a></div>
+    <div class="New_Button"><a class="Link_New_Item" href="{{ url_for('todo.add_item') }}">Add a new tusk</a></div>
     {% endif %}
 
     <!--列タイトルの表示-->
@@ -56,4 +56,13 @@
             <hr>
         {% endif %}
     {% endfor %}
+{% endblock %}
+
+{% block footer %}
+    {% if g.user %}
+        <p></p>
+        <p></p>
+        <p></p>
+        <div class="New_Button"><a class="Link_New_Item" href="{{ url_for('todo.add_item') }}">Add a new tusk</a></div>
+    {% endif %}
 {% endblock %}

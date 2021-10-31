@@ -5,10 +5,21 @@
 
 {% block content %}
     <form method="post">
-        <label for="username">Username</label>
-        <input name="username" id="username" required>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required>
-        <input type="submit" value="Register">
+        <div class="register_body">
+            <!--登録　ユーザー名-->
+            <div class="register_username">
+                <label class="register_username_label" for="username">Username</label>
+                <input class="register_username_input" name="username" id="username" required>    
+            </div>
+
+            <!--登録　パスワード-->
+            <div class="register_password">
+                <label class="register_password_label"for="password">Password</label>
+                <input class="register_password_input" type="password" name="password" id="password" required>
+            </div>
+
+            <!--登録　ボタン-->
+            <input class="register_button_submit" type="submit" value="Register">
+        </div>
     </form>
 {% endblock %}
