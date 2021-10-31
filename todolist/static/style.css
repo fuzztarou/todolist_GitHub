@@ -150,27 +150,103 @@ html {
 
 
 /*ログイン画面*/
-  .username_box {
-    margin: 10px 50px 10px 50px;
+.login_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;}
+
+.login_username {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 20px auto 20px auto;
+}
+
+.login_username_label {
+  width: 100px;
   }
 
-  .password_box {
-    margin: 10px 50px 10px 50px;
+  .login_username_input {
+    width: 300px;
   }
 
+  .login_password {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 20px auto 20px auto;
+    }
+
+  .login_password_label {
+    width: 100px;
+  }
+  
+  .login_password_input {
+    width: 300px;
+  }
+
+  .login_button_submit {
+    margin: 50px auto 0px auto;
+  }
+
+/*Register画面*/
+.register_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;}
+
+.register_username {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 20px auto 20px auto;
+}
+
+.register_username_label {
+  width: 100px;
+  }
+
+  .register_username_input {
+    width: 300px;
+  }
+
+  .register_password {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 20px auto 20px auto;
+    }
+
+  .register_password_label {
+    width: 100px;
+  }
+  
+  .register_password_input {
+    width: 300px;
+  }
+
+  .register_button_submit {
+    margin: 50px auto 0px auto;
+  }
 
 /*リスト画面*/
 .New_Button {
   display       : inline-block;
+  background    : #377ba828;     /* 背景色     */
+  border        : 0px solid #377ba8;
   border-radius : 5%;          /* 角丸       */
   font-size     : 16pt;        /* 文字サイズ */
   text-align    : center;      /* 文字位置   */
   cursor        : pointer;     /* カーソル   */
-  padding       : 5px 12px;    /* 余白       */
-  background    : #ffffff;     /* 背景色     */
-  color         : #000000;     /* 文字色     */
+  margin        : 30px;
+  padding       : 10px 15px;    /* 余白       */
   line-height   : 1em;         /* 1行の高さ  */
   transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 5px 5px 5px 0 rgba(100, 100, 100, .5);
+}
+.Link_New_Item{
+  color         : #377ba8;     /* 文字色     */
+  text-decoration: none;
 }
 
 .list_header {
@@ -192,10 +268,18 @@ html {
 }
 
 .list_elements {
+  display: flex;
+  justify-content: space-around;
   flex-basis: 30%;
   text-align    : center;      /* 文字位置   */
 }
 
+.list_elements_colored {
+  flex-basis: 30%;
+  color: white;
+  background-color: red;
+  text-align    : center;      /* 文字位置   */
+}
 .listed_items {
   display: flex;
   justify-content: space-around;
@@ -210,50 +294,98 @@ html {
   justify-content: center;
 }
 
-.item_name {
+.edit_item_name {
   display: flex;
   flex-direction: column;
   width: 40%;
   margin: 20px auto 20px auto;
 }
 
-.item_name_label {
+.edit_item_name_label {
   width: 100px;
 }
 
-.item_name_input {
+.edit_item_name_input {
   width: 300px;
 }
 
-.deadline {
+.edit_deadline {
   display: flex;
   flex-direction: column;
   width: 40%;
   margin: 20px auto 20px auto;
 }
 
-.deadline_label {
+.edit_deadline_label {
   width: 100px;
 }
 
-.deadline_input {
+.edit_deadline_input {
   width: 300px;
 }
 
-.status {
+.edit_status {
   display: flex;
   width: 40%;
   margin: 20px auto 20px auto;
+
 }
 
 .edit_status_label {
   width: 100px;
 }
 
-.edit_status {
-  display: flex;
-  justify-content: space-around;
-  width: 40%;
-  margin: 0px auto 0px auto;
+.edit_status_radio {
+  width: 200px;
+}
 
+.edit_save_button {
+  margin: 50px auto 0px auto;
+}
+
+.edit_delte_button {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* add 画面 */
+.add_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.add_item_name {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 20px auto 20px auto;
+}
+
+.add_item_name_label {
+  width: 100px;
+}
+
+.add_item_name_input {
+  width: 300px;
+}
+
+.add_deadline {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 20px auto 20px auto;
+}
+
+.add_deadline_label {
+  width: 100px;
+}
+
+.add_deadline_input {
+  width: 300px;
+}
+
+.add_save_button {
+  margin: 50px auto 0px auto;
 }

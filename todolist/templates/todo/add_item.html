@@ -6,10 +6,26 @@
 
 {% block content %}
     <form method="post">
-        <label for="item_name">Item</label>
-        <input name="item_name" id="item" value="{{ request.form['item_name'] }}" required>
-        <label for="deadline">Dead Line</label>
-        <textarea name="deadline" id="deadline">{{ request.form['deadline'] }}</textarea>
-        <input type="submit" value="Save">
+        <div class='add_body'>
+
+            <!--アイテム名-->
+            <div class='add_item_name'>
+                <label class='add_item_name_label' for="item">Item</label>
+                <input class='add_item_name_input' name="item_name" id="item_name"
+                    value="{{ request.form['item_name'] }}" required>
+            </div>
+
+            <!--締め切り-->
+            <div class='add_deadline'>
+                <label class='add_deadline_label' for="deadline">Deadline</label>
+                <input class='add_deadline_input' type="date" name="deadline" id="deadline"
+                    value="{{ request.form['deadline'] }}">
+            </div>
+
+            <!--Saveボタン-->
+            <div class='add_save_button'>
+                <input type="submit" value="Save">
+            </div>
+        </div>
     </form>
 {% endblock %}
