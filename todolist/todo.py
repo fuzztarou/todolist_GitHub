@@ -43,10 +43,14 @@ def index():
     db.commit()
 
     items = db.execute(
-        'SELECT i.id, item_name, deadline, item_status, owner_id, username, created, judge_date'
+        ' SELECT i.id, item_name, deadline, item_status, owner_id, username, created, judge_date'
         ' FROM item i JOIN user u ON i.owner_id = u.id'
         ' ORDER BY created DESC'
     ).fetchall()
+
+    for item in items[:]:
+        if item['owner_id'] != g.user['id']:
+            items.remove(item) 
 
     return render_template('todo/list.html', items=items)
 
