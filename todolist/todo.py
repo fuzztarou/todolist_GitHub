@@ -42,12 +42,14 @@ def index():
     
     db.commit()
 
+    #DBから取得
     items = db.execute(
         ' SELECT i.id, item_name, deadline, item_status, owner_id, username, created, judge_date'
         ' FROM item i JOIN user u ON i.owner_id = u.id'
         ' ORDER BY created DESC'
     ).fetchall()
 
+    #カレントユーザー以外のitemを削除
     for item in items[:]:
         if item['owner_id'] != g.user['id']:
             items.remove(item) 
