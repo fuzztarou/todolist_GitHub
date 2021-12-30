@@ -5,7 +5,7 @@ from flask import (
 )
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from flaskr.db import get_db
+from todolist.db import get_db
 
 #Blueprintの実装
 bp = Blueprint('authorize', __name__, url_prefix='/authorize')
