@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block header %}
-    <h1>{% block title %}Log In{% endblock %}</h1>
+    <h1>{% block title %}ログイン{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
@@ -19,7 +19,13 @@
             </div>
 
             <!--ログイン　ボタン-->
-            <input class="login_button_submit" type="submit" value="Log In">
+            <input class="login_button_submit" type="submit" value="ログイン">
+
+            <!--初めての方はこちら-->
+            <div class="login_link_to_login">
+                <a href="{{ url_for('authorize.register') }}">初めての方はこちらからユーザー登録を行ってください</a>
+            </div>
+                      
         </div>
     </form>
 {% endblock %}
