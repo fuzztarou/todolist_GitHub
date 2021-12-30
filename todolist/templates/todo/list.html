@@ -3,7 +3,7 @@
 {% block header %}
     <!--ログインしていれば New をクリックして新規投稿のリンクを表示-->
     {% if g.user %}
-    <div class="New_Button"><a class="Link_New_Item" href="{{ url_for('todo.add_item') }}">Add a new tusk</a></div>
+    <div class="New_Button"><a class="Link_New_Item" href="{{ url_for('todo.add_item') }}">タスク追加</a></div>
     {% endif %}
 
     <!--列タイトルの表示-->
@@ -48,7 +48,7 @@
 
             <!--ログインユーザーが投稿者であれば Edit を表示する-->
             <!-- Edit をクリックしたら id を取得してアップデートビューに渡す-->
-            <a class="list_elements" href="{{ url_for('todo.update', id=item['id']) }}">Edit</a>
+            <a class="list_elements" href="{{ url_for('todo.update', id=item['id']) }}">編集</a>
         </div>
 
         <!--最後の投稿でなければ横罫線を引く-->
@@ -63,6 +63,6 @@
         <p></p>
         <p></p>
         <p></p>
-        <div class="New_Button"><a class="Link_New_Item" href="{{ url_for('todo.add_item') }}">Add a new tusk</a></div>
+        <div class="New_Button"><a class="Link_New_Item" href="{{ url_for('todo.add_item') }}">タスク追加</a></div>
     {% endif %}
 {% endblock %}
