@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<title>{% block title %}{% endblock %} - ToDo List</title>
+<title>{% block title %}{% endblock %} - todo list</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
 <nav>
-    <h1>ToDo List</h1>
+    <h1>todo list</h1>
     <ul>
         {% if g.user %}
-            <li><span>Current User : {{ g.user['username']}}</span>
-            <li><a href="{{ url_for('authorize.logout')}}">Log Out</a>
+            <li><span>ログインユーザー : {{ g.user['username']}}</span>
+            <li><a href="{{ url_for('authorize.logout')}}">ログアウト</a>
         {% else %}
-        <li><a href="{{ url_for('authorize.register') }}">Register</a>
-        <li><a href="{{ url_for('authorize.login') }}">Log In</a>
+        <li><a href="{{ url_for('authorize.register') }}">ユーザー登録</a>
+        <li><a href="{{ url_for('authorize.login') }}">ログイン</a>
         {%endif%}
     </ul>
 </nav>

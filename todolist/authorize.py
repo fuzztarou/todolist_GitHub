@@ -61,10 +61,10 @@ def login():
 
         #userが一致しない    
         if user is None:
-            error = 'Incorrect username.'
+            error = '登録されていないユーザー名です'
         #passwordが一致しない
         elif not check_password_hash(user['password'], password):
-            error = 'Incorrect password.'
+            error = 'パスワードが間違っています'
         #エラーが無ければセッションをクリアしてからセッションにidを格納
         if error is None:
             session.clear()
